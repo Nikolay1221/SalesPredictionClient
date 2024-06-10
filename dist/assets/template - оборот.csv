@@ -1,0 +1,23 @@
+product id,YYYY_MM,остаток на начало,min,max,transit,backorder,sales,brand id
+product 1,2024_01,500,2.0,3.5,,,82,brand 1
+product 1,2024_02,403,2.0,3.5,100,,115,brand 1
+product 1,2024_03,401,2.0,3.5,320,,111,brand 1
+product 1,2024_04,301,2.0,3.5,,,95,brand 1
+product 1,2024_05,521,2.0,3.5,,50,110,brand 1
+product 1,2024_06,469,2.0,3.5,,,87,brand 1
+product 1,2024_07,367,2.0,3.5,,,107,brand 1
+product 1,2024_08,262,2.0,3.5,,,102,brand 1
+product 1,2024_09,156,2.0,3.5,,,98,brand 1
+product 1,2024_10,48,2.0,3.5,,100.00,115,brand 1
+product 1,2024_11,0,2.0,3.5,,,114,brand 1
+product 1,2024_12,0,2.0,3.5,,,113,brand 1
+product 1,2025_01,0,2.0,3.5,,,113,brand 1
+product 1,2025_02,0,2.0,3.5,,,114,brand 1
+product 1,2025_03,0,2.0,3.5,,,115,brand 1
+product 1,2025_04,0,2.0,3.5,,,116,brand 1
+product 1,2025_05,0,2.0,3.5,,,118,brand 1
+product 1,2025_06,0,2.0,3.5,,,119,brand 1
+product 1,2025_07,0,2.0,3.5,,,120,brand 1
+product 1,2025_08,0,2.0,3.5,,,122,brand 1
+product 1,2025_09,0,2.0,3.5,,,123,brand 1
+product 1,2025_10,0,2.0,3.5,,,124,brand 1

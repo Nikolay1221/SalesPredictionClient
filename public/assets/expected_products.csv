@@ -1,0 +1,7 @@
+product id,Date,balance start,Minimum,Maximum,Transit,Backorder,Sales,product category
+1,2024-01,500.0,10,50,5.0,1.0,100,category1
+2,2024-02,400.0,20,60,6.0,2.0,200,category2
+3,2024-03,300.0,30,70,7.0,3.0,300,category3
+2,2024-01,500.0,10,50,5.0,1.0,100,category1
+1,2024-01,500.0,10,50,5.0,1.0,100,category1
+4,2024-02,500.0,10,50,5.0,1.0,350,category1
