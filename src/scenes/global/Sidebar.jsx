@@ -43,7 +43,7 @@ const Sidebar = () => {
   return (
     <Box
       sx={{
-        height: "100vh", // Set the height to 100% of the viewport height
+        height: "128vh", // Set the height to 100% of the viewport height
         top: 0, // Align to the top of the viewport
         left: 0, // Align to the left of the viewport
         "& .pro-sidebar-inner": {
@@ -61,7 +61,7 @@ const Sidebar = () => {
         "& .pro-menu-item.active": {
           color: "#6870fa !important",
         },
-        
+
       }}
     >
       <ProSidebar collapsed={isCollapsed}>
@@ -168,14 +168,6 @@ const Sidebar = () => {
               title="History Page"
               to="/history"
               icon={<ManageHistoryOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-           
-            <Item
-              title="FAQ Page"
-              to="/faqs"
-              icon={<HelpOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />

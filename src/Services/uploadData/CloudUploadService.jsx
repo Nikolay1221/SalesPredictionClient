@@ -10,7 +10,7 @@ class CloudUploadService {
     formData.append('file', file);
 
     try {
-      const response = await axios.post('https://localhost:8080/api/datatables/upload?file', formData, {
+      const response = await axios.post('http://localhost:8080/api/datatables/upload?file', formData, {
         onUploadProgress: progressEvent => {
           const progress = (progressEvent.loaded / progressEvent.total) * 100;
           this.updateProgress(progress);

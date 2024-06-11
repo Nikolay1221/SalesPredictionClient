@@ -1,8 +1,6 @@
 import { useEffect, useMemo, useState, useRef } from "react";
-import { Box, Typography, IconButton, useTheme, Button, LinearProgress } from "@mui/material";
+import { Box, Typography, useTheme, Button, LinearProgress } from "@mui/material";
 import { tokens } from "../../theme";
-import RefreshIcon from '@mui/icons-material/Refresh';
-import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
 import io from "socket.io-client";
 
 import Header from "../../components/Header";
@@ -37,11 +35,17 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (tableId) {
-      fetchData();
+      localStorage.setItem("tableId", tableId);
+      fetchData(tableId);
     }
   }, [tableId]);
 
   useEffect(() => {
+    const savedTableId = localStorage.getItem("tableId");
+    if (savedTableId) {
+      fetchData(savedTableId);
+    }
+
     const savedPredictedData = localStorage.getItem("predictedData");
     const savedProgress = localStorage.getItem("progress");
     const savedCurrentStep = localStorage.getItem("currentStep");
@@ -62,7 +66,7 @@ const Dashboard = () => {
   }, []);
 
   useEffect(() => {
-    const socket = io('https://localhost:5000');
+    const socket = io('http://localhost:5000');
 
     socket.on('connect', () => {
       console.log('Connected to the server');
@@ -94,9 +98,9 @@ const Dashboard = () => {
     }
   }, [showProgressBar]);
 
-  const fetchData = () => {
+  const fetchData = (id) => {
     setIsLoading(true);
-    handleTableRequest(tableId, "get")
+    handleTableRequest(id, "get")
         .then((response) => {
           setRows(response.data);
         })
@@ -119,7 +123,7 @@ const Dashboard = () => {
     localStorage.setItem("buttonDisabled", "true");
 
     try {
-      const response = await axios.post(`https://localhost:8080/api/predict-sales/${tableId}`);
+      const response = await axios.post(`http://localhost:8080/api/predict-sales/${tableId}`);
       const transformedData = transformPredictedData(response.data);
       setPredictedData(transformedData);
       localStorage.setItem("predictedData", JSON.stringify(response.data));
@@ -451,7 +455,6 @@ const Dashboard = () => {
                       mb: 2,
                     }}
                 >
-                  <FileUploadOutlinedIcon sx={{ mr: "30px" }} />
                   Process Data
                 </Button>
                 <Typography

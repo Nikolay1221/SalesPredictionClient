@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const REST_API_BASE_URL = 'https://localhost:8080/api/files';
+const REST_API_BASE_URL = 'http://localhost:8080/api/files';
 
 export const handleTableRequest = (tableId, method, data) => {
     if (!tableId) {
@@ -9,11 +9,13 @@ export const handleTableRequest = (tableId, method, data) => {
 
     const url = `${REST_API_BASE_URL}/${tableId}/turnover-data`;
 
+    const deleted = `http://localhost:8080/api/files/${tableId}`
+
     switch (method.toLowerCase()) {
         case 'get':
             return axios.get(url);
         case 'delete':
-            return axios.delete(url);
+            return axios.delete(deleted);
         case 'post':
             return axios.post(url, data);
         default:
@@ -27,7 +29,7 @@ export const handleTableDataRequest = (rowId, tableId, method) => {
     if (!rowId) {
         throw new Error('Row ID is required');
     }
-    const REST_API_BASE_URL = 'https://localhost:8080/api/files';
+    const REST_API_BASE_URL = 'http://localhost:8080/api/files';
     const url = `${REST_API_BASE_URL}/${tableId}/turnover-data/${rowId}`;
 
     switch (method.toLowerCase()) {
